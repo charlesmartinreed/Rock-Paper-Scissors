@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Asap:400,500,700');
 
+:root {
+	font-family: 'Asap', sans-serif;
+}
+
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 body {
-	background-color: #24272E;
+	background-color: #292C34;
 }
 
 header {
@@ -18,8 +23,26 @@ header {
 header > h1 {
 	color: #24272E;
 	text-align: center;
-	font-family: 'Asap', sans-serif;
+}
 
+#user-label {
+	position: absolute; /* position with respect to the the doc */
+	top: 30px;
+	left: -25px;
+}
+
+#computer-label {
+	position: absolute;
+	top: 30px;
+	right: -30px;
+}
+
+#action-message {
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
 }
 
 .score-board {
@@ -42,14 +65,36 @@ header > h1 {
 	font-family: 'Asap', sans-serif;
 }
 
-#user-label {
-	position: absolute; /* position with respect to the the doc */
-	top: 30px;
-	left: -25px;
+.result {
+	font-size: 40px;
+	color: white;
 }
 
-#computer-label {
-	position: absolute;
-	top: 30px;
-	right: -30px;
+.result > p {
+	font-weight: bold;
+	text-align: center;
+}
+
+.choices {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.choice {
+	border: 3px solid white;
+	border-radius: 50%;
+	margin: 0 20px;
+	display: inline-block;
+}
+
+.choice:hover {
+	cursor: pointer;
+	background: #E2584D;
+	/* used to animate our hover */
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.choice > img {
+	width: 167.5px;
 }
