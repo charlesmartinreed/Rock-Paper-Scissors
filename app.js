@@ -12,17 +12,9 @@ const scissors_div = document.getElementById('scissors');
 
 //EVENT LISTENERS for the choice buttons
 	function main() {
-		rock_div.addEventListener('click', function(){
-			game("rock");
-		});
-
-		paper_div.addEventListener('click', function(){
-			game("paper")
-		});
-
-		scissors_div.addEventListener('click', function(){
-			game("scissors")
-		});
+		rock_div.addEventListener('click', () => game("rock"));
+		paper_div.addEventListener('click', () => game("paper"));
+		scissors_div.addEventListener('click', () => game("scissors"));
 	}
 
 	function game(userChoice) {
@@ -76,10 +68,7 @@ const scissors_div = document.getElementById('scissors');
 		//add the class to the clicked div
 		//classList is an array of classes on that element
 		userChoice_div.classList.add('green-glow');
-		setTimeout(function(){
-			//remove the class after 300 millisecond
-			userChoice_div.classList.remove('green-glow');
-		}, 300);
+		setTimeout(() => userChoice_div.classList.remove('green-glow'), 300);
 	}
 
 	function lose(userChoice, computerChoice) {
@@ -89,18 +78,14 @@ const scissors_div = document.getElementById('scissors');
 		userScore_span.innerHTML = userScore;
 		result_p.innerHTML = `${userChoice} is beaten by ${computerChoice}. You lose! 😢`;
 		userChoice_div.classList.add('red-glow');
-		setTimeout(function(){
-			userChoice_div.classList.remove('red-glow');
-		}, 300);
+		setTimeout(() => userChoice_div.classList.remove('red-glow'), 300);
 	}
 
 	function draw(userChoice, computerChoice) {
 		const userChoice_div = document.getElementById(userChoice);
 		result_p.innerHTML = `${userChoice} vs ${computerChoice}? It's a draw!`;
 		userChoice_div.classList.add('gray-glow');
-		setTimeout(function(){
-			userChoice_div.classList.remove('gray-glow');
-		}, 300);
+		setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
 	}
 
 	main();
