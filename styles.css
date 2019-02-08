@@ -71,6 +71,7 @@ header > h1 {
 }
 
 .result > p {
+	text-transform: capitalize; /* quick dirty fix for capitalization issue */
 	font-weight: bold;
 	text-align: center;
 }
