@@ -12,28 +12,51 @@ const scissors_div = document.getElementById('scissors');
 
 	function game(userChoice) {
 		//grab a random computer choice
-		getComputerChoice();
+		const computerChoice = getComputerChoice();
+
+		//compare userChoice with computerChoice
+		switch (userChoice + computerChoice) {
+			//win cases
+			case "rs":
+			case "sp":
+			case "pr":
+				console.log("USER WINS");
+				break;
+			//lose cases
+			case "rp":
+			case "sr":
+			case "ps":
+				console.log("USER LOSES");
+				break;
+			//draw cases
+			case "rr":
+			case "pp":
+			case "ss":
+				console.log("DRAW");
+				break;
+		}
 	}
 
 //EVENT LISTENERS for the choice buttons
 	function main() {
 		rock_div.addEventListener('click', function(){
-			game("rock");
+			game("r");
 		});
 
 		paper_div.addEventListener('click', function(){
-			game("paper")
+			game("p")
 		});
 
 		scissors_div.addEventListener('click', function(){
-			game("scissors")
+			game("s")
 		});
 	}
 
 	function getComputerChoice() {
-		const choices = ['rock', 'paper', 'scissors'];
+		const choices = ['r', 'p', 's'];
 		//random number between 0-3; 0, 1, 2
-		console.log(Math.floor(Math.random() * choices.length)); //normally a random number between
+		const randomNumber = Math.floor(Math.random() * choices.length);
+		return choices[randomNumber];
 	}
 
 	main();
