@@ -82,6 +82,7 @@ header > h1 {
 }
 
 .choice {
+	padding: 4px;
 	border: 3px solid white;
 	border-radius: 50%;
 	margin: 0 20px;
@@ -90,7 +91,7 @@ header > h1 {
 
 .choice:hover {
 	cursor: pointer;
-	background: #E2584D;
+	background: rgba(255, 255, 255, 0.5);
 	/* used to animate our hover */
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
@@ -98,4 +99,23 @@ header > h1 {
 
 .choice > img {
 	width: 167.5px;
+}
+
+/* win, lose, draw classes */
+.green-glow {
+	border: 3px solid #4DCC7D;
+	-webkit-box-shadow: 0 0 10px #31B43A;
+	        box-shadow: 0 0 10px #31B43A;
+}
+
+.red-glow {
+	border: 3px solid #FC121B;
+	-webkit-box-shadow: 0 0 10px #D01115;
+	        box-shadow: 0 0 10px #D01115;
+}
+
+.gray-glow {
+	border: 3px solid #464647;
+	-webkit-box-shadow: 0 0 10px #25292B;
+	        box-shadow: 0 0 10px #25292B;
 }
